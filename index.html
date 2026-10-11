@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anna & Erik – Bröllop 2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="hero-pre">Välkommen till vårt bröllop</p>
+    <h1>Anna &amp; Erik</h1>
+    <p class="hero-date">12 juni 2027 · Stockholm</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Sektioner">
+    <button role="tab" id="tab-hem" aria-controls="hem" aria-selected="true">Hem</button>
+    <button role="tab" id="tab-program" aria-controls="program" aria-selected="false" tabindex="-1">Program &amp; plats</button>
+    <button role="tab" id="tab-resa" aria-controls="resa" aria-selected="false" tabindex="-1">Resa &amp; boende</button>
+    <button role="tab" id="tab-bilder" aria-controls="bilder" aria-selected="false" tabindex="-1">Bilder</button>
+    <button role="tab" id="tab-osa" aria-controls="osa" aria-selected="false" tabindex="-1">OSA</button>
+  </nav>
+
+  <main>
+    <section id="hem" role="tabpanel" aria-labelledby="tab-hem">
+      <h2>Vår historia</h2>
+      <p>Vi träffades en regnig höstdag 2019 och sedan dess har det bara blivit bättre. Nu vill vi fira kärleken tillsammans med er som betyder mest för oss!</p>
+      <p>Här på sidan hittar du allt du behöver veta inför dagen. Glöm inte att <a href="#osa">OSA</a> senast <strong>1 april 2027</strong>.</p>
+    </section>
+
+    <section id="program" role="tabpanel" aria-labelledby="tab-program" hidden>
+      <h2>Program</h2>
+      <ul class="timeline">
+        <li><span>14:00</span> Vigsel i Storkyrkan</li>
+        <li><span>15:30</span> Mingel och fotografering</li>
+        <li><span>18:00</span> Middag på Villa Exempel</li>
+        <li><span>21:00</span> Fest och dans</li>
+      </ul>
+      <h2>Plats</h2>
+      <p><strong>Vigsel:</strong> Storkyrkan, Trångsund 1, Stockholm</p>
+      <p><strong>Fest:</strong> Villa Exempel, Exempelvägen 10, Stockholm</p>
+      <p><a href="https://maps.google.com/?q=Storkyrkan+Stockholm" target="_blank" rel="noopener">Visa på karta</a></p>
+      <h2>Klädkod</h2>
+      <p>Mörk kostym / cocktail.</p>
+    </section>
+
+    <section id="resa" role="tabpanel" aria-labelledby="tab-resa" hidden>
+      <h2>Att ta sig dit</h2>
+      <p>Närmaste tunnelbanestation är Gamla stan. Det finns begränsat med parkering i närheten.</p>
+      <h2>Boende</h2>
+      <ul>
+        <li><a href="https://example.com" target="_blank" rel="noopener">Hotell Exempel</a> – uppge koden <em>BROLLOP27</em> för rabatt.</li>
+        <li><a href="https://example.com" target="_blank" rel="noopener">Vandrarhem Exempel</a> – ett billigare alternativ.</li>
+      </ul>
+    </section>
+
+    <section id="bilder" role="tabpanel" aria-labelledby="tab-bilder" hidden>
+      <h2>Bilder</h2>
+      <!-- Lägg dina bilder i mappen images/ och uppdatera filnamnen nedan -->
+      <div class="gallery">
+        <img src="images/bild1.jpg" alt="Anna och Erik" loading="lazy">
+        <img src="images/bild2.jpg" alt="Anna och Erik" loading="lazy">
+        <img src="images/bild3.jpg" alt="Anna och Erik" loading="lazy">
+        <img src="images/bild4.jpg" alt="Anna och Erik" loading="lazy">
+      </div>
+    </section>
+
+    <section id="osa" role="tabpanel" aria-labelledby="tab-osa" hidden>
+      <h2>OSA</h2>
+      <p>Vänligen svara senast <strong>1 april 2027</strong>.</p>
+      <form id="rsvp-form" novalidate>
+        <label>Namn *
+          <input type="text" name="name" required maxlength="100" autocomplete="name">
+        </label>
+        <label>E-post *
+          <input type="email" name="email" required maxlength="150" autocomplete="email">
+        </label>
+        <fieldset>
+          <legend>Kommer du? *</legend>
+          <label class="inline"><input type="radio" name="attending" value="Ja" required> Ja, självklart!</label>
+          <label class="inline"><input type="radio" name="attending" value="Nej"> Tyvärr kan jag inte</label>
+        </fieldset>
+        <div id="attending-details">
+          <label>Antal personer (inklusive dig själv)
+            <select name="guests">
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+          </label>
+          <label>Namn på eventuell respektive
+            <input type="text" name="plusOne" maxlength="100">
+          </label>
+          <label>Allergier / specialkost
+            <textarea name="dietary" rows="3" maxlength="500"></textarea>
+          </label>
+        </div>
+        <!-- Honeypot mot spam, ska lämnas tomt -->
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit">Skicka svar</button>
+        <p id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Frågor? Kontakta oss på <a href="mailto:anna.erik@example.com">anna.erik@example.com</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
