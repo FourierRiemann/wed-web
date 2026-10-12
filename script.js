@@ -1,5 +1,5 @@
 // Klistra in webbapp-URL:en från Google Apps Script här (se apps-script/Code.gs)
-const RSVP_ENDPOINT = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxt7Ctz_n2T2GaCia0o87_6QvoBzlwRCbu4ORxUUJDS9cj5doNWAud0dJWCl0-qU_5lUw/exec';
 
 // --- Flikar ---
 const tabs = [...document.querySelectorAll('[role="tab"]')];

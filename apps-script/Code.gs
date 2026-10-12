@@ -1,4 +1,5 @@
 /**
+ * @OnlyCurrentDoc
  * Klistra in i Google Sheets: Tillägg > Apps Script.
  * Driftsätt: Driftsätt > Ny driftsättning > Webbapp,
  *   Kör som: Jag, Vem har åtkomst: Alla.
