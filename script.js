@@ -37,9 +37,28 @@ showTab(location.hash.slice(1));
 const form = document.getElementById('rsvp-form');
 const statusEl = document.getElementById('form-status');
 const details = document.getElementById('attending-details');
+const { arrival, departure } = form.elements;
+const nightsEl = document.getElementById('nights-summary');
+
+function setAttending(isAttending) {
+  details.hidden = !isAttending;
+  arrival.required = departure.required = isAttending;
+}
+
+function updateNights() {
+  if (!arrival.value || !departure.value) {
+    nightsEl.textContent = '';
+    return;
+  }
+  const nights = Math.round((Date.parse(departure.value) - Date.parse(arrival.value)) / 86400000);
+  nightsEl.textContent = nights === 0
+    ? 'Du kommer över dagen och behöver inget boende.'
+    : `Du behöver boende i ${nights} ${nights === 1 ? 'natt' : 'nätter'}.`;
+}
 
 form.addEventListener('change', e => {
-  if (e.target.name === 'attending') details.hidden = e.target.value === 'Nej';
+  if (e.target.name === 'attending') setAttending(e.target.value === 'Ja');
+  if (e.target === arrival || e.target === departure) updateNights();
 });
 
 function setStatus(msg, type) {
@@ -68,7 +87,9 @@ form.addEventListener('submit', async e => {
     const data = await res.json();
     if (!data.ok) throw new Error(data.error);
     form.reset();
+    setAttending(false);
     details.hidden = false;
+    updateNights();
     setStatus('Tack för ditt svar! Vi ser fram emot att fira med dig.', 'success');
   } catch (err) {
     console.error(err);

@@ -7,6 +7,8 @@
 
 const FIELDS = ['name', 'email', 'attending', 'guests', 'plusOne', 'dietary'];
 const MAX_LEN = 500;
+const ARRIVALS = ['2027-07-16', '2027-07-17'];
+const DEPARTURES = ['2027-07-17', '2027-07-18'];
 
 function doPost(e) {
   try {
@@ -19,14 +21,23 @@ function doPost(e) {
       return json({ ok: false, error: 'Saknade fält' });
     }
 
+    let stay = ['', '', ''];
+    if (p.attending === 'Ja') {
+      if (!ARRIVALS.includes(p.arrival) || !DEPARTURES.includes(p.departure)) {
+        return json({ ok: false, error: 'Ogiltiga datum' });
+      }
+      const nights = Math.round((Date.parse(p.departure) - Date.parse(p.arrival)) / 86400000);
+      stay = [p.arrival, p.departure, nights];
+    }
+
     const lock = LockService.getScriptLock();
     lock.waitLock(10000);
     try {
       const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
       if (sheet.getLastRow() === 0) {
-        sheet.appendRow(['Tidpunkt', 'Namn', 'E-post', 'Kommer', 'Antal', 'Respektive', 'Specialkost']);
+        sheet.appendRow(['Tidpunkt', 'Namn', 'E-post', 'Kommer', 'Antal', 'Respektive', 'Specialkost', 'Ankomst', 'Avresa', 'Nätter']);
       }
-      sheet.appendRow([new Date(), ...FIELDS.map(f => clean(p[f]))]);
+      sheet.appendRow([new Date(), ...FIELDS.map(f => clean(p[f])), ...stay]);
     } finally {
       lock.releaseLock();
     }

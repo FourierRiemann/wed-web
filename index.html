@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anna & Erik – Bröllop 2027</title>
+  <title>Daria & Jesper – Bröllop 2027</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
   <header class="hero">
     <p class="hero-pre">Välkommen till vårt bröllop</p>
-    <h1>Anna &amp; Erik</h1>
-    <p class="hero-date">12 juni 2027 · Stockholm</p>
+    <h1>Daria &amp; Jesper</h1>
+    <p class="hero-date">17 juli 2027 · Norrbyskär</p>
   </header>
 
   <nav class="tabs" role="tablist" aria-label="Sektioner">
@@ -27,44 +27,46 @@
   <main>
     <section id="hem" role="tabpanel" aria-labelledby="tab-hem">
       <h2>Vår historia</h2>
-      <p>Vi träffades en regnig höstdag 2019 och sedan dess har det bara blivit bättre. Nu vill vi fira kärleken tillsammans med er som betyder mest för oss!</p>
+      <p>Lägg till något här.</p>
       <p>Här på sidan hittar du allt du behöver veta inför dagen. Glöm inte att <a href="#osa">OSA</a> senast <strong>1 april 2027</strong>.</p>
     </section>
 
     <section id="program" role="tabpanel" aria-labelledby="tab-program" hidden>
       <h2>Program</h2>
       <ul class="timeline">
-        <li><span>14:00</span> Vigsel i Storkyrkan</li>
+        <li><span>14:00</span> Vigsel på Norrbyskär</li>
         <li><span>15:30</span> Mingel och fotografering</li>
         <li><span>18:00</span> Middag på Villa Exempel</li>
         <li><span>21:00</span> Fest och dans</li>
       </ul>
       <h2>Plats</h2>
-      <p><strong>Vigsel:</strong> Storkyrkan, Trångsund 1, Stockholm</p>
-      <p><strong>Fest:</strong> Villa Exempel, Exempelvägen 10, Stockholm</p>
-      <p><a href="https://maps.google.com/?q=Storkyrkan+Stockholm" target="_blank" rel="noopener">Visa på karta</a></p>
+      <p><strong>Vigsel:</strong> Norrbyskär Kyrka</p>
+      <p><strong>Fest:</strong> KFUM lägergård, Kapellet</p>
       <h2>Klädkod</h2>
       <p>Mörk kostym / cocktail.</p>
     </section>
 
     <section id="resa" role="tabpanel" aria-labelledby="tab-resa" hidden>
       <h2>Att ta sig dit</h2>
-      <p>Närmaste tunnelbanestation är Gamla stan. Det finns begränsat med parkering i närheten.</p>
+      <p>Båtförbindelser finns från fastlandet till Norrbyskär. Karta till färjan hittar du <a href="https://www.google.com/maps/place/Norrbyskärsfärjan/@63.5623007,19.8265192,14.32z/data=!4m6!3m5!1s0x467cf38b4b170607:0x6ecc71fe69cbb063!8m2!3d63.5636825!4d19.8305458!16s%2Fg%2F11gscd2pps?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">här</a> och tidtabeller <a href="https://www.norrbyskar.se/erbjudanden/om-oss/farjetider/" target="_blank" rel="noopener">här</a>. Bröllopsfest och boende sker på KFUM lägergård.</p>
+      <figure class="map">
+        <a href="images/norrbyskar-karta.jpg" target="_blank" rel="noopener">
+          <img src="images/norrbyskar-karta.jpg" alt="Illustrerad karta över Norrbyskär med färjeläge, herrgård, stugor och badplatser" loading="lazy">
+        </a>
+        <figcaption>Klicka på kartan för att förstora. Illustration: Eva Jonsson/Ritrum</figcaption>
+      </figure>
       <h2>Boende</h2>
-      <ul>
-        <li><a href="https://example.com" target="_blank" rel="noopener">Hotell Exempel</a> – uppge koden <em>BROLLOP27</em> för rabatt.</li>
-        <li><a href="https://example.com" target="_blank" rel="noopener">Vandrarhem Exempel</a> – ett billigare alternativ.</li>
-      </ul>
+      <p>Boendet kostar 400 kr per natt per person. Bokning görs av oss baserat på era svar i OSA.</p>
     </section>
 
     <section id="bilder" role="tabpanel" aria-labelledby="tab-bilder" hidden>
       <h2>Bilder</h2>
       <!-- Lägg dina bilder i mappen images/ och uppdatera filnamnen nedan -->
       <div class="gallery">
-        <img src="images/bild1.jpg" alt="Anna och Erik" loading="lazy">
-        <img src="images/bild2.jpg" alt="Anna och Erik" loading="lazy">
-        <img src="images/bild3.jpg" alt="Anna och Erik" loading="lazy">
-        <img src="images/bild4.jpg" alt="Anna och Erik" loading="lazy">
+        <img src="images/bild1.jpg" alt="Daria och Jesper" loading="lazy">
+        <img src="images/bild2.jpg" alt="Daria och Jesper" loading="lazy">
+        <img src="images/bild3.jpg" alt="Daria och Jesper" loading="lazy">
+        <img src="images/bild4.jpg" alt="Daria och Jesper" loading="lazy">
       </div>
     </section>
 
@@ -93,6 +95,24 @@
           <label>Namn på eventuell respektive
             <input type="text" name="plusOne" maxlength="100">
           </label>
+          <fieldset>
+            <legend>Ankomst och avresa *</legend>
+            <label>Ankomst
+              <select name="arrival">
+                <option value="">Välj dag</option>
+                <option value="2027-07-16">Fredag 16 juli</option>
+                <option value="2027-07-17">Lördag 17 juli</option>
+              </select>
+            </label>
+            <label>Avresa
+              <select name="departure">
+                <option value="">Välj dag</option>
+                <option value="2027-07-17">Lördag 17 juli</option>
+                <option value="2027-07-18">Söndag 18 juli</option>
+              </select>
+            </label>
+            <p id="nights-summary" aria-live="polite"></p>
+          </fieldset>
           <label>Allergier / specialkost
             <textarea name="dietary" rows="3" maxlength="500"></textarea>
           </label>
@@ -106,9 +126,9 @@
   </main>
 
   <footer>
-    <p>Frågor? Kontakta oss på <a href="mailto:anna.erik@example.com">anna.erik@example.com</a></p>
+    <p>Frågor? Kontakta oss på <a href="mailto:daria.jesper@example.com">daria.jesper@example.com</a></p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
